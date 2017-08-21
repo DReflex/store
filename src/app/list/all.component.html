@@ -1,0 +1,14 @@
+<div *ngFor="let product of products" class="product">
+  <div class="col-md-4">
+    <div class="thumbnail">
+        <a [routerLink]="['/prod', product.name]">
+          <img [src]="product.img" alt="#" style="width:auto; height:280px"></a>
+
+        <div class="caption">
+          <p><b>Name: </b>{{product.name}}</p>
+          <p><b>Price: </b> {{ product.price | currency:'USD':true}}</p>
+        </div>
+ <button class="btn btn-sm btn-danger" (click)="deleteProduct(product)"><i class="fa fa-trash"></i> Delete</button>
+    </div>
+  </div>
+</div>

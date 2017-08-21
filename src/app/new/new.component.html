@@ -1,0 +1,58 @@
+<h1 style="text-align:center">Add Product</h1><hr>
+
+  <div class="col-md-4 col-xs-6">
+    <form class="form-inline" [formGroup]="addProdForm" (ngSubmit)="addProd(product)" style="display:inline">
+      <div class="form-group">
+        <label for="name">NAME:</label>  <input [(ngModel)]="product.name" class="form-control" type="text" name="name" formControlName="name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <label for="img">Img:</label>  <input [(ngModel)]="product.img" class="form-control" type="text" name="img" formControlName="img" placeholder="Enter img src" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price:</label><input [(ngModel)]="product.price" class="form-control" type="number" name="price" formControlName="price" placeholder="Price" step="any" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="cpu">CPU:</label><input [(ngModel)]="product.cpu" class="form-control" type="text" name="cpu" formControlName="cpu" placeholder="CPU" step="any" required>
+      </div>
+      <div class="form-group">
+        <label for="gpu">GPU:</label><input [(ngModel)]="product.gpu" class="form-control" type="text" name="gpu" formControlName="gpu" placeholder="GPU" step="any" required>
+      </div>
+      <div class="form-group">
+      <label for="ram">RAM:</label>  <input [(ngModel)]="product.ram" class="form-control" type="number" name="ram" formControlName="ram" placeholder="0" step="any" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="hdd">HDD:</label><input [(ngModel)]="product.hdd" class="form-control" type="text" name="hdd" formControlName="hdd" placeholder="0 GB" step="any" min="0" required>
+      </div>
+      <div class="form-group">
+        <label for="os">OS:</label><input [(ngModel)]="product.os" class="form-control" type="text" name="os" formControlName="os" placeholder="OS" step="any" required>
+      </div><br>
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <ul>
+      <li><input [(ngModel)]="product.type" class="form-control" formControlName="type"  name="type" value="comp" type="radio">Computer</li>
+      <li><input [(ngModel)]="product.type" name="type" formControlName="type"  value="laptop" type="radio">Laptop</li>
+    </ul>
+  </div><br>
+      <button class="btn btn-sm btn-primary" type="submit" ><i class="fa fa-floppy-o"></i> Create </button>
+    </form>
+
+  </div>
+
+  <div class="col-md-4 col-xs-6">
+    <div class="thumbnail">
+        <img [src]="product.img" alt="#" style="width:100%">
+        <ul class="list-group">
+    <li class="list-group-item">Name: {{product.name}} </li>
+    <li class="list-group-item">CPU: {{product.cpu}}</li>
+    <li class="list-group-item">GPU: {{product.gpu}} </li>
+    <li class="list-group-item">RAM: {{product.ram}}</li>
+    <li class="list-group-item">HDD: {{product.hdd}}</li>
+    <li class="list-group-item">OS: {{product.os}}</li>
+    <li class="list-group-item">Type: {{product.type}}</li>
+    <li class="list-group-item">Price: {{ product.price | currency:'USD':true}} </li>
+
+  </ul>
+
+    </div>
+
+  </div>

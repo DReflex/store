@@ -1,0 +1,14 @@
+.box h1{
+  text-align: center;
+}
+li{
+  font-size: 15px;
+  list-style-type: upper-roman;
+}
+h2{
+  margin-left: 10px;
+}
+.contact h4{
+  margin-top: 50px;
+  margin-left: 10px;
+}

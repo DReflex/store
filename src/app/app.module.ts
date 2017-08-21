@@ -1,16 +1,36 @@
+import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule }    from '@angular/http';
+import { AppRoutingModule } from './routing.module';
 
-import { AppComponent } from './app.component';
+import { ProductService } from './service/product.service'
+
+import { AppComponent } from './nav/app.component';
+import { AboutComponent } from './about/about.component';
+import { ListComponent }  from './list/list.component';
+import { DetailComponent } from './detail/detail.component';
+import { NewComponent }    from './new/new.component';
+import { FilterComponent } from './filter/filter.component'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent,
+    ListComponent,
+    DetailComponent,
+    NewComponent,
+    FilterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
