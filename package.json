@@ -10,7 +10,13 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "npm run build",
-    "start": "node server/server.js"
+    "start": "node server/index.js",
+    "deploy": "git push origin master && git push heroku master"
+
+  },
+  "engines": {
+  "node": "6.11.0",
+  "npm": "3.10.10"
   },
   "private": true,
   "dependencies": {
